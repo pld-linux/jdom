@@ -24,6 +24,15 @@ lightweight and fast, and is optimized for the Java programmer. It's
 an alternative to DOM and SAX, although it integrates well with both
 DOM and SAX.
 
+%description -l pl.UTF-8
+JDOM jest biblioteką napisaną w Javie służącą do obróbki
+dokumentów XML. JDOM jest reprezentacją danych pozwalającą w
+łatwy i efektywny sposób odczytywać, przekształcać i zapisywać
+dokumenty XML. JDOM posiada przejrzyste, lekkie i szyckie API, jest
+zoptymalizowane z myślą o programiście Javy. Biblioteka JDOM jest
+alternatywą dla DOM i SAX, jednak może być łatwo zintegrowana
+zarówno z DOM jak i SAX.
+
 %package demo
 Summary:	Demo for %{name}
 Summary(pl.UTF-8):	Pliki demonstracyjne dla pakietu %{name}
