@@ -1,4 +1,3 @@
-#
 %include	/usr/lib/rpm/macros.java
 Summary:	A Java representation of an XML document
 Name:		jdom
@@ -27,13 +26,12 @@ an alternative to DOM and SAX, although it integrates well with both
 DOM and SAX.
 
 %description -l pl.UTF-8
-JDOM jest biblioteką napisaną w Javie służącą do obróbki
-dokumentów XML. JDOM jest reprezentacją danych pozwalającą w
-łatwy i efektywny sposób odczytywać, przekształcać i zapisywać
-dokumenty XML. JDOM posiada przejrzyste, lekkie i szyckie API, jest
-zoptymalizowane z myślą o programiście Javy. Biblioteka JDOM jest
-alternatywą dla DOM i SAX, jednak może być łatwo zintegrowana
-zarówno z DOM jak i SAX.
+JDOM jest biblioteką napisaną w Javie służącą do obróbki dokumentów
+XML. JDOM jest reprezentacją danych pozwalającą w łatwy i efektywny
+sposób odczytywać, przekształcać i zapisywać dokumenty XML. JDOM
+posiada przejrzyste, lekkie i szyckie API, jest zoptymalizowane z
+myślą o programiście Javy. Biblioteka JDOM jest alternatywą dla DOM i
+SAX, jednak może być łatwo zintegrowana zarówno z DOM jak i SAX.
 
 %package demo
 Summary:	Demo for %{name}
@@ -51,10 +49,6 @@ Pliki demonstracyjne i przykłady dla pakietu %{name}.
 %setup -q
 
 %build
-export JAVA_HOME="%{java_home}"
-
-export LC_ALL=en_US
-
 %ant
 
 %install
@@ -64,18 +58,17 @@ install -d $RPM_BUILD_ROOT%{_javadir}
 install build/%{name}.jar $RPM_BUILD_ROOT%{_javadir}/%{name}-%{version}.jar
 ln -s %{name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/%{name}.jar
 
-find samples -name '*.class' -exec rm '{}' ';'
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/sax
-install samples/sax/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/sax
-install samples/*.* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -a samples/sax/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/sax
+cp -a samples/*.* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{_javadir}/*.jar
 %doc CHANGES.txt COMMITTERS.txt LICENSE.txt README.txt TODO.txt
+%{_javadir}/*.jar
 
 %files demo
 %defattr(644,root,root,755)
