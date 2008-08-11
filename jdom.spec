@@ -9,10 +9,12 @@ Group:		Development/Languages/Java
 Source0:	http://www.jdom.org/dist/binary/%{name}-%{version}.tar.gz
 # Source0-md5:	22745cbaaddb12884ed8ee09083d8fe2
 URL:		http://www.jdom.org/
+BuildRequires:	jdk
 BuildRequires:	jpackage-utils
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	jpackage-utils
+Requires:	jre
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
